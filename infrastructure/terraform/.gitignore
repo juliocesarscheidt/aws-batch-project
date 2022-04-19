@@ -1,0 +1,9 @@
+.terraform
+*.tfstate*
+output.json
+development.tfvars
+staging.tfvars
+production.tfvars
+.tfvars
+tfplan
+.terraform*
