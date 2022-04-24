@@ -11,7 +11,7 @@ cd infrastructure/terraform/
 aws_region         = "us-east-1"
 vpc_id             = "VPC-ID-0001"
 subnet_ids         = ["SUBNET-ID-0001"]
-batch_compute_name = "batch_compute_development"
+batch_compute_name = "batch-compute-development"
 ```
 
 And then use the Makefile for deploying, with the commands:
