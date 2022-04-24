@@ -12,6 +12,7 @@ aws_region         = "us-east-1"
 vpc_id             = "VPC-ID-0001"
 subnet_ids         = ["SUBNET-ID-0001"]
 batch_compute_name = "batch-compute-development"
+ssh_key_name       = "SSH_KEY_NAME"
 ```
 
 And then use the Makefile for deploying, with the commands:
