@@ -17,7 +17,12 @@ variable "subnet_ids" {
 variable "batch_compute_name" {
   description = "Batch compute name"
   type        = string
-  default     = "batch_compute"
+  default     = "batch-compute"
+}
+
+variable "ssh_key_name" {
+  type        = string
+  description = "SSH key name for accessing instances"
 }
 
 variable "tags" {

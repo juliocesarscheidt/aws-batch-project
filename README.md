@@ -1,4 +1,4 @@
-# AWS Batch Jobs with ECS containers and EC2 based
+# AWS Batch Jobs with ECS containers on EC2 basis
 
 ## Instructions
 

@@ -11,7 +11,7 @@ init:
 		-backend-config="bucket=$(AWS_BACKEND_BUCKET)" \
 		-backend-config="key=state.tfstate" \
 		-backend-config="region=$(AWS_DEFAULT_REGION)" \
-		-backend-config="workspace_key_prefix=terraform/batch_compute" \
+		-backend-config="workspace_key_prefix=terraform/batch-compute" \
 		-backend-config="access_key=$(AWS_ACCESS_KEY_ID)" \
 		-backend-config="secret_key=$(AWS_SECRET_ACCESS_KEY)" \
 		-backend-config="encrypt=true"
@@ -35,7 +35,6 @@ plan: validate
 		-out=$(PLAN_FILE) \
 		-var-file=$(ENV).tfvars \
 		-var aws_region="$(AWS_DEFAULT_REGION)" \
-		-var batch_compute_name="batch_compute_$(ENV)" \
 		-input=false
 
 apply: plan

@@ -3,8 +3,8 @@ const batch = new AWS.Batch({ apiVersion: '2016-08-10', region: process.env.AWS_
 
 const params = {
   jobName: 'test_job_001',
-  jobDefinition: 'batch_compute_development_job_definition',
-  jobQueue: 'batch_compute_development_job_queue',
+  jobDefinition: 'batch-compute-development-job-definition',
+  jobQueue: 'batch-compute-development-job-queue',
   containerOverrides: {
     command: ["ls", "-lth", "/tmp"],
     environment: [

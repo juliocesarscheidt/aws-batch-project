@@ -9,7 +9,7 @@ resource "aws_batch_compute_environment" "batch_compute" {
     security_group_ids = [aws_security_group.batch_compute_sg.id]
     subnets            = var.subnet_ids
     type               = "EC2"
-    ec2_key_pair       = "key_aws"
+    ec2_key_pair       = var.ssh_key_name
   }
 
   service_role = aws_iam_role.aws_batch_service_role.arn
@@ -28,7 +28,7 @@ output "batch_compute" {
 }
 
 resource "aws_batch_job_definition" "batch_compute_job_definition" {
-  name                 = "${var.batch_compute_name}_job_definition"
+  name                 = "${var.batch_compute_name}-job-definition"
   type                 = "container"
   container_properties = <<EOF
 {
@@ -72,7 +72,7 @@ output "batch_compute_job_definition" {
 }
 
 resource "aws_batch_job_queue" "batch_compute_job_queue" {
-  name     = "${var.batch_compute_name}_job_queue"
+  name     = "${var.batch_compute_name}-job-queue"
   state    = "ENABLED"
   priority = 1
   compute_environments = [
